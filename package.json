@@ -1,7 +1,6 @@
 {
   "name": "war-cards-game",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,5 +12,14 @@
   "dependencies": {
     "ansi-colors": "^4.1.3",
     "prompt-sync": "^4.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Electrolytful/war-cards-game.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Electrolytful/war-cards-game/issues"
+  },
+  "homepage": "https://github.com/Electrolytful/war-cards-game#readme",
+  "description": ""
 }

@@ -1,0 +1,2 @@
+
+const shuffledCard = naiveShuffle(cardsDeck);
