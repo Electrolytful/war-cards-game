@@ -11,16 +11,13 @@ const shuffledCard = naiveShuffle(cardsDeck);
 
 const player = new Player();
 const computer = new Player();
-player.setName("Player");
 computer.setName("Computer");
-player.setDeck(playerDeck);
-computer.setDeck(computerDeck);
-
-// const name = prompt("What is your name?");
-// player.setName(name); 
 
 
 function setupGame() {
+    const name = prompt("What is your name?");
+    player.setName(name);
+
     for(let i=0; i < shuffledCard.length / 2; i++ ){
         playerDeck.push(shuffledCard[i]);
     }
@@ -32,8 +29,8 @@ function setupGame() {
     player.setDeck(playerDeck);
     computer.setDeck(computerDeck);
 
-    console.log(`Name: ${player.getName()}\nDeck: ${player.getDeck()}`);
-    console.log(`Name: ${computer.getName()}\nDeck: ${computer.getDeck()}`);
+    console.log(`Name: ${player.getName()}\nDeck: ${createStringArray(player.getDeck())}`);
+    console.log(`Name: ${computer.getName()}\nDeck: ${createStringArray(player.getDeck())}`);
 }
 
 setupGame();
@@ -44,14 +41,13 @@ setupGame();
 
 
 
-
-
-
-
-
-
-
-
+function createStringArray(arr) {
+    let result = ""
+    arr.forEach(card => {
+        result += card.getValue() + card.getSuit() + " ";
+    });
+    return result;
+ }
 
 function naiveShuffle(deck) {
     for (var i = 0; i < deck.length; i++) {
