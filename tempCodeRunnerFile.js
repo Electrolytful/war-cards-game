@@ -1,2 +1,1 @@
-
-const shuffledCard = naiveShuffle(cardsDeck);
+    // console.log(playerDeck);

@@ -29,9 +29,15 @@ function naiveShuffle(deck) {
 
 
 function setupDecks(){
-    for(let i=26; i < shuffledCard.length; i-- ){
-        computerDeck.push
+    for(let i=0; i < shuffledCard.length / 2; i++ ){
+        playerDeck.push(shuffledCard[i]);
+
+
     }
 
-
+    for(let i=26; i < shuffledCard.length; i++ ){
+        computerDeck.push(shuffledCard[i]);
+    }
 }
+
+setupDecks()
