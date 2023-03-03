@@ -9,35 +9,58 @@ const playerDeck = [];
 const computerDeck = [];
 const shuffledCard = naiveShuffle(cardsDeck);
 
-// class Game {
-//     constructor();
+const player = new Player();
+const computer = new Player();
+player.setName("Player");
+computer.setName("Computer");
+player.setDeck(playerDeck);
+computer.setDeck(computerDeck);
 
-// }
-
-
-function naiveShuffle(deck) {
-    
-    for (var i = 0; i < deck.length; i++) {
-      const swapIndex = Math.floor(Math.random() * deck.length)
-      const currentCard = deck[i]
-      const cardToSwap = deck[swapIndex]
-      deck[i] = cardToSwap
-      deck[swapIndex] = currentCard
-    }
-    return deck
-  }
+// const name = prompt("What is your name?");
+// player.setName(name); 
 
 
-function setupDecks(){
+function setupGame() {
     for(let i=0; i < shuffledCard.length / 2; i++ ){
         playerDeck.push(shuffledCard[i]);
-
-
     }
 
     for(let i=26; i < shuffledCard.length; i++ ){
         computerDeck.push(shuffledCard[i]);
     }
+
+    player.setDeck(playerDeck);
+    computer.setDeck(computerDeck);
+
+    console.log(`Name: ${player.getName()}\nDeck: ${player.getDeck()}`);
+    console.log(`Name: ${computer.getName()}\nDeck: ${computer.getDeck()}`);
 }
 
-setupDecks()
+setupGame();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function naiveShuffle(deck) {
+    for (var i = 0; i < deck.length; i++) {
+        const swapIndex = Math.floor(Math.random() * deck.length)
+        const currentCard = deck[i]
+        const cardToSwap = deck[swapIndex]
+        deck[i] = cardToSwap
+        deck[swapIndex] = currentCard
+    }
+
+    return deck
+}
